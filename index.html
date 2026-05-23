@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAWIGACJA -->
+  <header>
+    <nav>
+      <span class="nav-logo">Jan Kowalski</span>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">prace</a></li>
+        <li><a href="about.html">o mnie</a></li>
+        <li><a href="contact.html">kontakt</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="menu">&#9776;</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Grafika &amp; ilustracja</h1>
+    <p class="hero-sub">Zbiór moich projektów — identyfikacje wizualne, ilustracje, plakaty.</p>
+  </section>
+
+  <!-- FILTRY -->
+  <section class="filters">
+    <button class="filter-btn active" data-filter="all">wszystkie</button>
+    <button class="filter-btn" data-filter="logo">logo</button>
+    <button class="filter-btn" data-filter="ilustracja">ilustracja</button>
+    <button class="filter-btn" data-filter="plakat">plakat</button>
+  </section>
+
+  <!-- SIATKA PRAC -->
+  <main class="grid" id="gallery">
+
+    <!-- PRACA 1 — skopiuj ten blok, żeby dodać kolejną pracę -->
+    <article class="card" data-category="logo">
+      <div class="card-img-wrap">
+        <img src="images/praca-1.jpg" alt="Identyfikacja wizualna dla kawiarni" loading="lazy" />
+        <div class="card-overlay">
+          <span>identyfikacja wizualna</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2>Kawiarnia Chmura</h2>
+        <p>Logo + system identyfikacji</p>
+      </div>
+    </article>
+
+    <!-- PRACA 2 -->
+    <article class="card" data-category="ilustracja">
+      <div class="card-img-wrap">
+        <img src="images/praca-2.jpg" alt="Seria ilustracji botanicznych" loading="lazy" />
+        <div class="card-overlay">
+          <span>ilustracja</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2>Botanika</h2>
+        <p>Seria ilustracji</p>
+      </div>
+    </article>
+
+    <!-- PRACA 3 -->
+    <article class="card" data-category="plakat">
+      <div class="card-img-wrap">
+        <img src="images/praca-3.jpg" alt="Plakat festiwalowy" loading="lazy" />
+        <div class="card-overlay">
+          <span>plakat</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2>Festiwal Dźwięku</h2>
+        <p>Plakat eventowy</p>
+      </div>
+    </article>
+
+    <!-- PRACA 4 -->
+    <article class="card" data-category="logo">
+      <div class="card-img-wrap">
+        <img src="images/praca-4.jpg" alt="Logo dla studia fotograficznego" loading="lazy" />
+        <div class="card-overlay">
+          <span>logo</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <h2>Studio F</h2>
+        <p>Znak + typografia</p>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- STOPKA -->
+  <footer>
+    <p>© 2025 Jan Kowalski</p>
+    <p><a href="mailto:jan@example.com">jan@example.com</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
