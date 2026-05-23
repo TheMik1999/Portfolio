@@ -174,14 +174,14 @@ nav {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(17, 17, 17, .55); /* ← tu regulujesz przyciemnienie */
+  background: rgba(17, 17, 17, .75); /* ← tu regulujesz przyciemnienie */
   display: flex;
   align-items: flex-end;
   padding: 1rem;
   opacity: 0;
   transition: opacity .3s ease;
   /* pointer-events: none pozwala klikowi przejść do .card-img-wrap */
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .card:hover .card-overlay { opacity: 1; }
