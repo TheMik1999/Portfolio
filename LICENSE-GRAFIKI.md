@@ -1,0 +1,1 @@
+All rights reserved — Maciej Doniec 2025
