@@ -14,40 +14,7 @@
 
 <body>
 
-  <script>
 
-const cards = document.querySelectorAll('.card img');
-
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const lightboxClose = document.getElementById('lightboxClose');
-
-cards.forEach(img => {
-
-  img.addEventListener('click', () => {
-
-    lightbox.classList.add('open');
-
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-
-  });
-
-});
-
-lightboxClose.addEventListener('click', () => {
-  lightbox.classList.remove('open');
-});
-
-lightbox.addEventListener('click', (e) => {
-
-  if (e.target === lightbox) {
-    lightbox.classList.remove('open');
-  }
-
-});
-
-</script>
   <!-- NAWIGACJA -->
   <header>
     <nav>
@@ -78,26 +45,7 @@ lightbox.addEventListener('click', (e) => {
   <!-- SIATKA PRAC -->
   <main class="grid" id="gallery">
 
-    <!-- PRACA 1 — skopiuj ten blok, żeby dodać kolejną pracę -->
-     <!-- <article class="card">
 
-      <div class="card-img-wrap">
-
-        <img src="img/project-01.jpg" alt="Project">
-
-        <div class="card-overlay">
-
-          <div class="overlay-content">
-            <span>branding</span>
-            <h2>Modern Identity</h2>
-            <p>2025</p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </article> -->
     <article class="card" data-category="Kwadraty">
       <div class="card-img-wrap">
         <img src="images/collage_seed_42_n5_sort_darkness_asc_fill_diagonalz.png" alt="Identyfikacja wizualna dla kawiarni" loading="lazy" />
@@ -107,18 +55,6 @@ lightbox.addEventListener('click', (e) => {
         <p>Logo + system identyfikacji</p>
         </div>
       </div>
-      <!-- <div class="card-body">
-
-      </div>
-              <div class="card-overlay">
-
-          <div class="overlay-content">
-            <span>branding</span>
-            <h2>Modern Identity</h2>
-            <p>2025</p>
-          </div>
-
-        </div> -->
     </article>
 
     <!-- PRACA 2 -->
@@ -126,24 +62,19 @@ lightbox.addEventListener('click', (e) => {
       <div class="card-img-wrap">
         <img src="images/1.png" alt="Seria ilustracji botanicznych" loading="lazy" />
         <div class="card-overlay">
-                  <h2>Przekrój przez Automat 1</h2>
+        <h2>Przekrój przez Automat 1</h2>
         <p>Seria ilustracji</p>
           <span>ilustracja</span>
         </div>
-      <!-- </div>
-      <div class="card-body">
-
-      </div> -->
+      </div>
     </article>
-
-        </article>
 
     <article class="card" data-category="Kwadraty">
       <div class="card-img-wrap">
         <img src="images/21_21_44_44.png" alt="" loading="lazy" />
       </div>
     </article>
-    <!-- PRACA 3 -->
+
     <article class="card" data-category="Czas">
       <div class="card-img-wrap">
         <img src="images/3.png" alt="Plakat festiwalowy" loading="lazy" />
@@ -153,9 +84,6 @@ lightbox.addEventListener('click', (e) => {
         <p>Plakat eventowy</p>
         </div>
       </div>
-      <!-- <div class="card-body">
-
-      </div> -->
     </article>
 
     <!-- PRACA 4 -->
@@ -168,27 +96,13 @@ lightbox.addEventListener('click', (e) => {
         <p>Znak + typografia</p>
         </div>
       </div>
-      <!-- <div class="card-body">
-
-      </div> -->
-    </article>
-
-
-        </article>
+      </article>
 
     <!-- PRACA 4 -->
     <article class="card" data-category="Kwadraty">
       <div class="card-img-wrap">
         <img src="images/collage_seed_nothing_n10_sort_darkness_asc_fill_diagonalz.png" alt="" loading="lazy" />
-        <!-- <div class="card-overlay">
-          <span>logo</span>
-                  <h2>Studio F</h2>
-        <p>Znak + typografia</p>
-        </div> -->
       </div>
-      <!-- <div class="card-body">
-
-      </div> -->
     </article>
 
     <article class="card" data-category="Kwadraty">
@@ -204,6 +118,40 @@ lightbox.addEventListener('click', (e) => {
     <p>© 2025 Maciej Doniec</p>
     <p><a href="mailto:maciej@example.com">maciej@example.com</a></p>
   </footer>
+
+
+
+<script>
+const cards = document.querySelectorAll('.card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+cards.forEach(img => {
+
+  img.addEventListener('click', () => {
+
+    lightbox.classList.add('open');
+
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+
+  });
+
+});
+
+lightboxClose.addEventListener('click', () => {
+  lightbox.classList.remove('open');
+});
+
+lightbox.addEventListener('click', (e) => {
+
+  if (e.target === lightbox) {
+    lightbox.classList.remove('open');
+  }
+
+});
+
+</script>
 
   <script src="js/main.js"></script>
 
