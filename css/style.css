@@ -172,7 +172,7 @@ nav {
   transition: transform .45s ease;
 }
 
-/* ===== CARD ===== */
+/* ===== CARD =====
 .card {
   cursor: pointer;
   transition: opacity .2s;
@@ -194,7 +194,7 @@ nav {
   transition: transform .45s ease;
 }
 
-.card:hover .card-img-wrap img { transform: scale(1.03); }
+.card:hover .card-img-wrap img { transform: scale(1.03); } */
 
 .card-overlay {
   position: absolute;
