@@ -1,173 +1,339 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Portfolio</title>
+
   <link rel="stylesheet" href="css/style.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 
-
-
-
 <body>
 
+  <!-- ===== NAV ===== -->
 
-  <!-- NAWIGACJA -->
   <header>
+
     <nav>
-      <span class="nav-logo">Maciej Doniec</span>
+
+      <span class="nav-logo">
+        Maciej Doniec
+      </span>
+
       <ul class="nav-links">
         <li><a href="index.html" class="active">prace</a></li>
         <li><a href="about.html">o mnie</a></li>
         <li><a href="contact.html">kontakt</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="menu">&#9776;</button>
+
+      <button class="nav-toggle" aria-label="menu">
+        &#9776;
+      </button>
+
     </nav>
+
   </header>
 
-  <!-- HERO -->
+  <!-- ===== HERO ===== -->
+
   <section class="hero">
-    <h1>Grafika &amp; ilustracja</h1>
-    <p class="hero-sub">Zbiór moich projektów — identyfikacje wizualne, ilustracje, plakaty.</p>
+
+    <h1>
+      Grafika &amp; ilustracja
+    </h1>
+
+    <p class="hero-sub">
+      Zbiór moich projektów — identyfikacje wizualne,
+      ilustracje, plakaty.
+    </p>
+
   </section>
 
-  <!-- FILTRY -->
+  <!-- ===== FILTERS ===== -->
+
   <section class="filters">
-    <button class="filter-btn active" data-filter="all">wszystkie</button>
-    <button class="filter-btn" data-filter="Kwadraty">Kwadraty</button>
-    <!-- <button class="filter-btn" data-filter="ilustracja">ilustracja</button> -->
-    <button class="filter-btn" data-filter="Czas">Czas</button>
+
+    <button class="filter-btn active" data-filter="all">
+      wszystkie
+    </button>
+
+    <button class="filter-btn" data-filter="Kwadraty">
+      Kwadraty
+    </button>
+
+    <button class="filter-btn" data-filter="Czas">
+      Czas
+    </button>
+
   </section>
 
-  <!-- SIATKA PRAC -->
+  <!-- ===== GALLERY ===== -->
+
   <main class="grid" id="gallery">
 
+    <!-- ===== CARD 1 ===== -->
 
     <article class="card" data-category="Kwadraty">
+
       <div class="card-img-wrap">
-        <img src="images/collage_seed_42_n5_sort_darkness_asc_fill_diagonalz.png" alt="Identyfikacja wizualna dla kawiarni" loading="lazy" />
+
+        <img
+          src="images/collage_seed_42_n5_sort_darkness_asc_fill_diagonalz.png"
+          alt="Automat 2D"
+          loading="lazy"
+        />
+
         <div class="card-overlay">
-          <span>identyfikacja wizualna</span>
-                  <h2>Automat 2D</h2>
-        <p>Logo + system identyfikacji</p>
+
+          <div class="overlay-content">
+
+            <span>identyfikacja wizualna</span>
+
+            <h2>Automat 2D</h2>
+
+            <p>Logo + system identyfikacji</p>
+
+          </div>
+
         </div>
+
       </div>
+
     </article>
 
-    <!-- PRACA 2 -->
+    <!-- ===== CARD 2 ===== -->
+
     <article class="card" data-category="Czas">
+
       <div class="card-img-wrap">
-        <img src="images/1.png" alt="Seria ilustracji botanicznych" loading="lazy" />
+
+        <img
+          src="images/1.png"
+          alt="Przekrój przez Automat 1"
+          loading="lazy"
+        />
+
         <div class="card-overlay">
-        <h2>Przekrój przez Automat 1</h2>
-        <p>Seria ilustracji</p>
-          <span>ilustracja</span>
+
+          <div class="overlay-content">
+
+            <span>ilustracja</span>
+
+            <h2>Przekrój przez Automat 1</h2>
+
+            <p>Seria ilustracji</p>
+
+          </div>
+
         </div>
+
       </div>
+
     </article>
 
+    <!-- ===== CARD 3 ===== -->
+
     <article class="card" data-category="Kwadraty">
+
       <div class="card-img-wrap">
-        <img src="images/21_21_44_44.png" alt="" loading="lazy" />
+
+        <img
+          src="images/21_21_44_44.png"
+          alt=""
+          loading="lazy"
+        />
+
       </div>
+
     </article>
+
+    <!-- ===== CARD 4 ===== -->
 
     <article class="card" data-category="Czas">
+
       <div class="card-img-wrap">
-        <img src="images/3.png" alt="Plakat festiwalowy" loading="lazy" />
+
+        <img
+          src="images/3.png"
+          alt="Plakat eventowy"
+          loading="lazy"
+        />
+
         <div class="card-overlay">
-          <span>plakat</span>
-                  <h2>Przekrój przez Automat 1</h2>
-        <p>Plakat eventowy</p>
+
+          <div class="overlay-content">
+
+            <span>plakat</span>
+
+            <h2>Przekrój przez Automat 1</h2>
+
+            <p>Plakat eventowy</p>
+
+          </div>
+
         </div>
+
       </div>
+
     </article>
 
-    <!-- PRACA 4 -->
+    <!-- ===== CARD 5 ===== -->
+
     <article class="card" data-category="Czas">
-      <div class="card-img-wrap">
-        <img src="images/s4.png" alt="Logo dla studia fotograficznego" loading="lazy" />
-        <div class="card-overlay">
-          <span>logo</span>
-                  <h2>Studio F</h2>
-        <p>Znak + typografia</p>
-        </div>
-      </div>
-      </article>
 
-    <!-- PRACA 4 -->
-    <article class="card" data-category="Kwadraty">
       <div class="card-img-wrap">
-        <img src="images/collage_seed_nothing_n10_sort_darkness_asc_fill_diagonalz.png" alt="" loading="lazy" />
+
+        <img
+          src="images/s4.png"
+          alt="Studio F"
+          loading="lazy"
+        />
+
+        <div class="card-overlay">
+
+          <div class="overlay-content">
+
+            <span>logo</span>
+
+            <h2>Studio F</h2>
+
+            <p>Znak + typografia</p>
+
+          </div>
+
+        </div>
+
       </div>
+
     </article>
 
+    <!-- ===== CARD 6 ===== -->
+
     <article class="card" data-category="Kwadraty">
+
       <div class="card-img-wrap">
-        <img src="images/21_21_105_105.png" alt="" loading="lazy" />
+
+        <img
+          src="images/collage_seed_nothing_n10_sort_darkness_asc_fill_diagonalz.png"
+          alt=""
+          loading="lazy"
+        />
+
       </div>
+
+    </article>
+
+    <!-- ===== CARD 7 ===== -->
+
+    <article class="card" data-category="Kwadraty">
+
+      <div class="card-img-wrap">
+
+        <img
+          src="images/21_21_105_105.png"
+          alt=""
+          loading="lazy"
+        />
+
+      </div>
+
     </article>
 
   </main>
 
-  <!-- STOPKA -->
+  <!-- ===== FOOTER ===== -->
+
   <footer>
+
     <p>© 2025 Maciej Doniec</p>
-    <p><a href="mailto:maciej@example.com">maciej@example.com</a></p>
+
+    <p>
+      <a href="mailto:maciej@example.com">
+        maciej@example.com
+      </a>
+    </p>
+
   </footer>
 
-
-
-<script>
-const cards = document.querySelectorAll('.card img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const lightboxClose = document.getElementById('lightboxClose');
-cards.forEach(img => {
-
-  img.addEventListener('click', () => {
-
-    lightbox.classList.add('open');
-
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-
-  });
-
-});
-
-lightboxClose.addEventListener('click', () => {
-  lightbox.classList.remove('open');
-});
-
-lightbox.addEventListener('click', (e) => {
-
-  if (e.target === lightbox) {
-    lightbox.classList.remove('open');
-  }
-
-});
-
-</script>
-
-  <script src="js/main.js"></script>
+  <!-- ===== LIGHTBOX ===== -->
 
   <div class="lightbox" id="lightbox">
 
-  <button class="lightbox-close" id="lightboxClose">
-    ×
-  </button>
+    <button class="lightbox-close" id="lightboxClose">
+      ×
+    </button>
 
-  <img
-    src=""
-    alt=""
-    class="lightbox-img"
-    id="lightboxImg"
-  >
+    <img
+      src=""
+      alt=""
+      class="lightbox-img"
+      id="lightboxImg"
+    />
 
-</div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+
+  <script src="js/main.js"></script>
+
+  <script>
+
+    const cards = document.querySelectorAll('.card img');
+
+    const lightbox = document.getElementById('lightbox');
+
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    cards.forEach(img => {
+
+      img.addEventListener('click', () => {
+
+        lightbox.classList.add('open');
+
+        lightboxImg.src = img.src;
+
+        lightboxImg.alt = img.alt;
+
+      });
+
+    });
+
+    lightboxClose.addEventListener('click', () => {
+
+      lightbox.classList.remove('open');
+
+    });
+
+    lightbox.addEventListener('click', (e) => {
+
+      if (e.target === lightbox) {
+
+        lightbox.classList.remove('open');
+
+      }
+
+    });
+
+    document.addEventListener('keydown', (e) => {
+
+      if (e.key === 'Escape') {
+
+        lightbox.classList.remove('open');
+
+      }
+
+    });
+
+  </script>
+
 </body>
+
 </html>
