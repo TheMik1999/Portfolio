@@ -140,14 +140,36 @@ nav {
 .filter-btn:hover { border-color: var(--black); color: var(--black); }
 .filter-btn.active { background: var(--black); border-color: var(--black); color: var(--white); }
 
-/* ===== GALLERY GRID ===== */
+/* ===== GALLERY GRID — MASONRY ===== */
 .grid {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--gap) 4rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-  gap: var(--gap);
+  columns: 3;
+  column-gap: var(--gap);
+}
+
+.card {
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.card:hover { opacity: .88; }
+.card.hidden { display: none; }
+
+/* usuń lub zastąp stary .card-img-wrap */
+.card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--gray-1);
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: auto;        /* ← kluczowa zmiana, brak obcinania */
+  display: block;
+  transition: transform .45s ease;
 }
 
 /* ===== CARD ===== */
@@ -326,6 +348,7 @@ footer a { color: var(--gray-3); }
     gap: 2.5rem;
     z-index: 99;
   }
+  .grid { columns: 2; }
   .nav-links.open a { font-size: 1.1rem; }
   .nav-toggle { display: block; }
 
