@@ -8,6 +8,43 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
+
+<script>
+
+const cards = document.querySelectorAll('.card img');
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+cards.forEach(img => {
+
+  img.addEventListener('click', () => {
+
+    lightbox.classList.add('open');
+
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+
+  });
+
+});
+
+lightboxClose.addEventListener('click', () => {
+  lightbox.classList.remove('open');
+});
+
+lightbox.addEventListener('click', (e) => {
+
+  if (e.target === lightbox) {
+    lightbox.classList.remove('open');
+  }
+
+});
+
+</script>
+
+
 <body>
 
   <!-- NAWIGACJA -->
@@ -98,6 +135,13 @@
       </div> -->
     </article>
 
+        </article>
+
+    <article class="card" data-category="logo">
+      <div class="card-img-wrap">
+        <img src="images/21_21_44_44.png" alt="" loading="lazy" />
+      </div>
+    </article>
     <!-- PRACA 3 -->
     <article class="card" data-category="plakat">
       <div class="card-img-wrap">
@@ -128,6 +172,30 @@
       </div> -->
     </article>
 
+
+        </article>
+
+    <!-- PRACA 4 -->
+    <article class="card" data-category="logo">
+      <div class="card-img-wrap">
+        <img src="images/collage_seed_nothing_n10_sort_darkness_asc_fill_diagonalz.png" alt="" loading="lazy" />
+        <!-- <div class="card-overlay">
+          <span>logo</span>
+                  <h2>Studio F</h2>
+        <p>Znak + typografia</p>
+        </div> -->
+      </div>
+      <!-- <div class="card-body">
+
+      </div> -->
+    </article>
+
+    <article class="card" data-category="logo">
+      <div class="card-img-wrap">
+        <img src="images/21_21_105_105.png" alt="" loading="lazy" />
+      </div>
+    </article>
+
   </main>
 
   <!-- STOPKA -->
@@ -137,5 +205,20 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <div class="lightbox" id="lightbox">
+
+  <button class="lightbox-close" id="lightboxClose">
+    ×
+  </button>
+
+  <img
+    src=""
+    alt=""
+    class="lightbox-img"
+    id="lightboxImg"
+  >
+
+</div>
 </body>
 </html>
