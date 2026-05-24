@@ -160,9 +160,7 @@ body.dark {
   --gray-3: #666666;
 }
 
-body.dark .card-img-wrap img {
-  filter: invert(1);
-}
+body.dark .card-img-wrap img:not(.no-invert) { filter: invert(1); }
 
 body.dark .lightbox-img {
   filter: invert(1);
