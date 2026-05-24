@@ -155,7 +155,8 @@ nav {
 .card-img-wrap {
   position: relative;
   overflow: hidden;
-  background: var(--gray-1);
+  background: var(--white);
+  padding: 8px; /* ← biała otoczka wokół zdjęcia */
 }
 
 .card-img-wrap img {
