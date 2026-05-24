@@ -33,6 +33,25 @@ a:hover { opacity: .6; }
 ul { list-style: none; }
 
 /* ===== NAV ===== */
+
+.dark-toggle {
+  background: none;
+  border: 1px solid var(--gray-2);
+  border-radius: 999px;
+  padding: .35rem .9rem;
+  font-family: var(--font-sans);
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: lowercase;
+  cursor: pointer;
+  color: var(--gray-3);
+  transition: border-color .2s, color .2s;
+}
+
+.dark-toggle:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
 header {
   position: sticky;
   top: 0;
@@ -131,32 +150,55 @@ nav {
 .filter-btn:hover { border-color: var(--black); color: var(--black); }
 .filter-btn.active { background: var(--black); border-color: var(--black); color: var(--white); }
 
-/* ===== MASONRY GRID ===== */
+
+/* ===== DARK MODE ===== */
+body.dark {
+  --white: #111111;
+  --black: #ffffff;
+  --gray-1: #1a1a1a;
+  --gray-2: #2a2a2a;
+  --gray-3: #666666;
+}
+
+body.dark .card-img-wrap img {
+  filter: invert(1);
+}
+
+body.dark .lightbox-img {
+  filter: invert(1);
+}
+
+/* ===== GRID — 3 niezależne kolumny ===== */
 .grid {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--gap) 4rem;
-  columns: 3;
-  column-gap: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+/* każda kolumna to osobny flex container — karty układają się niezależnie */
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
 
 /* ===== CARD ===== */
 .card {
-  break-inside: avoid;
-  margin-bottom: var(--gap);
   cursor: pointer;
   transition: opacity .2s;
 }
 
 .card:hover { opacity: .95; }
-.card.hidden { display: none; }
 
 /* ===== CARD IMAGE WRAP ===== */
 .card-img-wrap {
   position: relative;
   overflow: hidden;
   background: var(--white);
-  padding: 8px; /* ← biała otoczka wokół zdjęcia */
+  padding: 8px;
 }
 
 .card-img-wrap img {
@@ -168,21 +210,16 @@ nav {
 
 .card:hover img { transform: scale(1.03); }
 
-/* ===== OVERLAY =====
-   Zmień wartość rgba żeby przyciemnić/rozjaśnić:
-   .35 = subtelne | .55 = wyraźne (obecne) | .75 = mocne
-   ===== */
+/* ===== OVERLAY ===== */
 .card-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(17, 17, 17, .75); /* ← tu regulujesz przyciemnienie */
+  inset: 8px;
+  background: rgba(17, 17, 17, .75);
   display: flex;
   align-items: flex-end;
   padding: 1rem;
   opacity: 0;
   transition: opacity .3s ease;
-  /* pointer-events: none pozwala klikowi przejść do .card-img-wrap */
-  /* pointer-events: none; */
 }
 
 .card:hover .card-overlay { opacity: 1; }
@@ -222,10 +259,7 @@ nav {
   z-index: 999;
 }
 
-.lightbox.open {
-  opacity: 1;
-  visibility: visible;
-}
+.lightbox.open { opacity: 1; visibility: visible; }
 
 .lightbox-img {
   max-width: 90vw;
@@ -371,7 +405,9 @@ footer a { color: var(--gray-3); }
   }
   .nav-links.open a { font-size: 1.1rem; }
   .nav-toggle { display: block; }
-  .grid { columns: 2; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  /* na mobile col-2 jest ukryty — tylko 2 kolumny */
+  #col-2 { display: none; }
   .about-layout { grid-template-columns: 1fr; gap: 2rem; }
   .about-photo img { aspect-ratio: 1; max-width: 220px; }
   footer { flex-direction: column; gap: .4rem; text-align: center; }

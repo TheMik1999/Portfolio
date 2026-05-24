@@ -2,515 +2,170 @@
 <html lang="pl">
 
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
-
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  />
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  />
-
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 
 <body>
 
   <!-- ===== NAV ===== -->
-
   <header>
-
     <nav>
-
-      <span class="nav-logo">
-        Maciej Doniec
-      </span>
-
+      <span class="nav-logo">Maciej Doniec</span>
+      <button class="dark-toggle" id="darkToggle">☽</button>
       <ul class="nav-links">
-
-        <li>
-          <a
-            href="index.html"
-            class="active"
-          >
-            prace
-          </a>
-        </li>
-
-        <li>
-          <a href="about.html">
-            o mnie
-          </a>
-        </li>
-
-        <li>
-          <a href="contact.html">
-            kontakt
-          </a>
-        </li>
-
+        <li><a href="index.html" class="active">prace</a></li>
+        <li><a href="about.html">o mnie</a></li>
+        <li><a href="contact.html">kontakt</a></li>
       </ul>
-
-      <button
-        class="nav-toggle"
-        aria-label="menu"
-      >
-        &#9776;
-      </button>
-
+      <button class="nav-toggle" aria-label="menu">&#9776;</button>
     </nav>
-
   </header>
-
+  
   <!-- ===== HERO ===== -->
-
   <section class="hero">
-
-    <h1>
-      Cellular Automata Art
-    </h1>
-
-    <p class="hero-sub">
-      Zbiór prac poświęconych automatom komórkowym. Otrzymane złożone wzory są efektem iteracji prostych reguł, które prowadzą do zaskakujących rezultatów.
-    </p>
-
+    <h1>Cellular Automata Art</h1>
+    <p class="hero-sub">Zbiór prac poświęconych automatom komórkowym. Otrzymane złożone wzory są efektem iteracji prostych reguł, które prowadzą do zaskakujących rezultatów.</p>
   </section>
 
   <!-- ===== FILTERS ===== -->
-
   <section class="filters">
-
-    <button
-      class="filter-btn active"
-      data-filter="all"
-    >
-      wszystkie
-    </button>
-
-    <button
-      class="filter-btn"
-      data-filter="kwadraty"
-    >
-      kwadraty
-    </button>
-
-    <button
-      class="filter-btn"
-      data-filter="czas"
-    >
-      czas
-    </button>
-
+    <button class="filter-btn active" data-filter="all">wszystkie</button>
+    <button class="filter-btn" data-filter="kwadraty">kwadraty</button>
+    <button class="filter-btn" data-filter="czas">czas</button>
   </section>
 
-  <!-- ===== GALLERY ===== -->
+  <!-- ===== ŹRÓDŁO KART — niewidoczne, JS klonuje do kolumn ===== -->
+  <div id="card-source" hidden>
 
-  <main
-    class="grid"
-    id="gallery"
-  >
-
-    <!-- ===== CARD 1 ===== -->
-
-    <article
-      class="card"
-      data-category="kwadraty"
-    >
-
+    <article class="card" data-category="kwadraty">
       <div class="card-img-wrap">
-
-        <img
-          src="images/collage_seed_42_n5_sort_darkness_asc_fill_diagonalz.png"
-          alt="Automat 2D"
-          loading="lazy"
-        />
-
+        <img src="images/collage_seed_42_n5_sort_darkness_asc_fill_diagonalz.png" alt="Automat 2D" loading="lazy" />
         <div class="card-overlay">
-
           <div class="overlay-content">
-
-            <span>
-              Collage 
-            </span>
-
-            <h2>
-              Automat 2D
-            </h2>
-
-            <p>
-              Kompzycja 25 stanu automatu 2D po 2000 iteracji dla różnych zasad.
-            </p>
-
+            <h2>Automat 2D</h2>
+            <p>Kompozycja 25 stanów automatu 2D po 2000 iteracji dla różnych zasad.</p>
           </div>
-
         </div>
-
       </div>
-
     </article>
 
-    <!-- ===== CARD 2 ===== -->
-
-    <article
-      class="card"
-      data-category="czas"
-    >
-
+    <article class="card" data-category="czas">
       <div class="card-img-wrap">
-
-        <img
-          src="images/1.png"
-          alt="Przekrój przez Automat 1"
-          loading="lazy"
-        />
-
+        <img src="images/1.png" alt="Przekrój przez Automat 1" loading="lazy" />
         <div class="card-overlay">
-
           <div class="overlay-content">
-
-            <span>
-              ilustracja
-            </span>
-
-            <h2>
-              Przekrój przez Automat 1
-            </h2>
-
-            <p>
-              Kolejne korki czasowe pochodzące z przekroju przez automatu 2D.
-            </p>
-
+            <h2>Przekrój przez Automat 1</h2>
+            <p>Kolejne kroki czasowe pochodzące z przekroju przez automat 2D.</p>
           </div>
-
         </div>
-
       </div>
-
     </article>
 
-    <!-- ===== CARD 3 ===== -->
-
-    <article
-      class="card"
-      data-category="kwadraty"
-    >
-
+    <article class="card" data-category="kwadraty">
       <div class="card-img-wrap">
-
-        <img
-          src="images/21_21_44_44.png"
-          alt="Kompozycja geometryczna"
-          loading="lazy"
-        />
-
+        <img src="images/21_21_44_44.png" alt="Kompozycja geometryczna" loading="lazy" />
       </div>
-
     </article>
 
-    <!-- ===== CARD 4 ===== -->
-
-    <article
-      class="card"
-      data-category="czas"
-    >
-
+    <article class="card" data-category="czas">
       <div class="card-img-wrap">
-
-        <img
-          src="images/3.png"
-          alt="Plakat eventowy"
-          loading="lazy"
-        />
-
-        <div class="card-overlay">
-
-          <div class="overlay-content">
-
-            <span>
-              plakat
-            </span>
-
-            <h2>
-              Przekrój przez Automat 1
-            </h2>
-
-            <p>
-              Plakat eventowy
-            </p>
-
-          </div>
-
-        </div>
-
+        <img src="images/3.png" alt="Plakat eventowy" loading="lazy" />
       </div>
-
     </article>
 
-    <!-- ===== CARD 5 ===== -->
-
-    <article
-      class="card"
-      data-category="kwadraty"
-    >
-
+    <article class="card" data-category="kwadraty">
       <div class="card-img-wrap">
-
-        <img
-          src="images/51_51_126_126.png"
-          alt="Projekt graficzny"
-          loading="lazy"
-        />
-
+        <img src="images/51_51_126_126.png" alt="Projekt graficzny" loading="lazy" />
       </div>
-
     </article>
 
-    <!-- ===== CARD 6 ===== -->
-
-    <article
-      class="card"
-      data-category="czas"
-    >
-
+    <article class="card" data-category="czas">
       <div class="card-img-wrap">
-
-        <img
-          src="images/s4.png"
-          alt="Studio F"
-          loading="lazy"
-        />
-
-        <div class="card-overlay">
-
-          <div class="overlay-content">
-
-            <span>
-              logo
-            </span>
-
-            <h2>
-              Studio F
-            </h2>
-
-            <p>
-              Znak + typografia
-            </p>
-
-          </div>
-
-        </div>
-
+        <img src="images/s4.png" alt="Studio F" loading="lazy" />
       </div>
-
     </article>
 
-    <!-- ===== CARD 7 ===== -->
-
-    <article
-      class="card"
-      data-category="kwadraty"
-    >
-
+    <article class="card" data-category="czas">
       <div class="card-img-wrap">
-
-        <img
-          src="images/collage_seed_nothing_n10_sort_darkness_asc_fill_diagonalz.png"
-          alt="Abstrakcyjna kompozycja"
-          loading="lazy"
-        />
-
+        <img src="images/51_51_285_285.png" alt="Przekrój czasowy" loading="lazy" />
       </div>
-
     </article>
 
-    <!-- ===== CARD 8 ===== -->
-
-    <article
-      class="card"
-      data-category="kwadraty"
-    >
-
+    <article class="card" data-category="kwadraty">
       <div class="card-img-wrap">
-
-        <img
-          src="images/21_21_105_105.png"
-          alt="Forma geometryczna"
-          loading="lazy"
-        />
-
+        <img src="images/collage_seed_nothing_n10_sort_darkness_asc_fill_diagonalz.png" alt="Abstrakcyjna kompozycja" loading="lazy" />
       </div>
-
     </article>
 
-        <article
-      class="card"
-      data-category="kwadraty"
-    >
-
+    <article class="card" data-category="kwadraty">
       <div class="card-img-wrap">
-
-        <img
-          src="images/51_51_243_243.png"
-          alt="Forma geometryczna"
-          loading="lazy"
-        />
-
+        <img src="images/collage_seed_42_n10_sort_darkness_asc_fill_diagonal.png" alt="Abstrakcyjna kompozycja 2" loading="lazy" />
       </div>
-
     </article>
 
-            <article
-      class="card"
-      data-category="Czas"
-    >
-
+    <article class="card" data-category="czas">
       <div class="card-img-wrap">
-
-        <img
-          src="images/2_2_192_54_rand.png"
-          alt="Forma geometryczna"
-          loading="lazy"
-        />
-
+        <img src="images/2_2_92_26_diagonal.png" alt="Przekrój diagonalny" loading="lazy" />
       </div>
-
     </article>
 
-
-                <article
-      class="card"
-      data-category="Czas"
-    >
-
+    <article class="card" data-category="kwadraty">
       <div class="card-img-wrap">
-
-        <img
-          src="images/s5.png"
-          alt="Forma geometryczna"
-          loading="lazy"
-        />
-
+        <img src="images/21_21_105_105.png" alt="Forma geometryczna" loading="lazy" />
       </div>
-
     </article>
-  </main>
 
-  <!-- ===== FOOTER ===== -->
+    <article class="card" data-category="kwadraty">
+      <div class="card-img-wrap">
+        <img src="images/51_51_243_243.png" alt="Forma geometryczna 2" loading="lazy" />
+      </div>
+    </article>
 
-  <footer>
+    <article class="card" data-category="czas">
+      <div class="card-img-wrap">
+        <img src="images/2_2_192_54_rand.png" alt="Przekrój losowy" loading="lazy" />
+      </div>
+    </article>
 
-    <p>
-      © 2025 Maciej Doniec
-    </p>
+    <article class="card" data-category="czas">
+      <div class="card-img-wrap">
+        <img src="images/s5.png" alt="Przekrój s5" loading="lazy" />
+      </div>
+    </article>
 
-    <p>
-
-      <a href="mailto:maciej@example.com">
-        maciej@example.com
-      </a>
-
-    </p>
-
-  </footer>
-
-  <!-- ===== LIGHTBOX ===== -->
-
-  <div
-    class="lightbox"
-    id="lightbox"
-  >
-
-    <button
-      class="lightbox-close"
-      id="lightboxClose"
-    >
-      ×
-    </button>
-
-    <img
-      src=""
-      alt=""
-      class="lightbox-img"
-      id="lightboxImg"
-    />
+    <article class="card" data-category="czas">
+      <div class="card-img-wrap">
+        <img src="images/51_51_241_241.png" alt="Przekrój 241" loading="lazy" />
+      </div>
+    </article>
 
   </div>
 
-  <!-- ===== SCRIPTS ===== -->
+  <!-- ===== GALLERY — 3 niezależne kolumny ===== -->
+  <main class="grid" id="gallery">
+    <div class="col" id="col-0"></div>
+    <div class="col" id="col-1"></div>
+    <div class="col" id="col-2"></div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Maciej Doniec</p>
+    <p><a href="mailto:maciej.doniec99@gmail.com">maciej.doniec99@gmail.com</a></p>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+  </div>
 
   <script src="js/main.js"></script>
 
-  <script>
-
-    const cards =
-      document.querySelectorAll('.card img');
-
-    const lightbox =
-      document.getElementById('lightbox');
-
-    const lightboxImg =
-      document.getElementById('lightboxImg');
-
-    const lightboxClose =
-      document.getElementById('lightboxClose');
-
-    cards.forEach(img => {
-
-      img.addEventListener('click', () => {
-
-        lightbox.classList.add('open');
-
-        lightboxImg.src = img.src;
-
-        lightboxImg.alt = img.alt;
-
-      });
-
-    });
-
-    lightboxClose.addEventListener('click', () => {
-
-      lightbox.classList.remove('open');
-
-    });
-
-    lightbox.addEventListener('click', (e) => {
-
-      if (e.target === lightbox) {
-
-        lightbox.classList.remove('open');
-
-      }
-
-    });
-
-    document.addEventListener('keydown', (e) => {
-
-      if (e.key === 'Escape') {
-
-        lightbox.classList.remove('open');
-
-      }
-
-    });
-
-  </script>
-
 </body>
-
 </html>
