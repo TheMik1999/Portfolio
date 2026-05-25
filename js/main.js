@@ -44,17 +44,58 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('col-2'),
   ];
 
-  function distributeCards(cards) {
-    cols.forEach(c => { if (c) c.innerHTML = ''; });
-    cards.forEach((card, i) => {
-      const colIndex = i % NUM_COLS;
-      if (cols[colIndex]) {
-        cols[colIndex].appendChild(card.cloneNode(true));
-      }
-    });
-    attachLightbox();
+function distributeCards(cards, startType = "czas") {
+  cols.forEach(c => { if (c) c.innerHTML = ""; });
+
+  const typeA = "czas";
+  const typeB = "kwadraty";
+
+  const aCards = [];
+  const bCards = [];
+  const otherCards = [];
+
+  // podział wg data-category
+  cards.forEach(card => {
+    const type = card.dataset.category;
+
+    if (type === typeA) {
+      aCards.push(card);
+    } else if (type === typeB) {
+      bCards.push(card);
+    } else {
+      otherCards.push(card);
+    }
+  });
+
+  let turnA = startType === typeA;
+  const result = [];
+
+  // przeplatanie
+  while (aCards.length || bCards.length) {
+    if (turnA && aCards.length) {
+      result.push(aCards.shift());
+    } else if (!turnA && bCards.length) {
+      result.push(bCards.shift());
+    } else if (aCards.length) {
+      result.push(aCards.shift());
+    } else if (bCards.length) {
+      result.push(bCards.shift());
+    }
+
+    turnA = !turnA;
   }
 
+  // reszta (inne kategorie)
+  result.push(...otherCards);
+
+  // wrzucenie do kolumn
+  result.forEach((card, i) => {
+    const colIndex = i % cols.length;
+    cols[colIndex]?.appendChild(card.cloneNode(true));
+  });
+
+  attachLightbox();
+}
   // ===== FILTRY =====
   const filterBtns = document.querySelectorAll('.filter-btn');
   filterBtns.forEach(btn => {
@@ -101,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== START =====
-  distributeCards(allCards);
+  // distributeCards(cards, "kwadrat");
+  distributeCards(allCards, "kwadrat");
 
 }); // koniec DOMContentLoaded
