@@ -192,6 +192,11 @@ body.dark .lightbox-img {
 .card:hover { opacity: .95; }
 
 /* ===== CARD IMAGE WRAP ===== */
+.card-img-wrap img {
+  pointer-events: none; /* blokuje prawy przycisk na obrazku */
+  user-select: none;
+  -webkit-user-drag: none;
+}
 .card-img-wrap {
   position: relative;
   overflow: hidden;

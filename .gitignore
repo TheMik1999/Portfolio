@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Edytory
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Misc
+*.log
+node_modules/
+.env
+
+images/png/
