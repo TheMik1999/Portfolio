@@ -291,6 +291,13 @@ body.dark .lightbox-img {
 .lightbox-close:hover { opacity: 1; }
 
 /* ===== ABOUT PAGE ===== */
+.icon {
+  width: 14px;
+  height: 14px;
+  fill: var(--black);
+  opacity: .8;
+}
+
 .about-layout {
   max-width: var(--max-w);
   margin: 2rem auto 4rem;
@@ -330,6 +337,18 @@ body.dark .lightbox-img {
   flex-wrap: wrap;
   gap: .4rem;
   margin-bottom: 2rem;
+}
+
+.social-links_contact a {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  font-size: 1.05rem;   /* większy tekst */
+  font-weight: 500;     /* pogrubienie */
+
+  text-decoration: none;
+  color: var(--black);
 }
 
 .skills-list li {
